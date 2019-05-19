@@ -26,13 +26,15 @@
     <form id="my-form">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" 
+                data-bv-require="true" data-bv-email="true">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="exampleInputPassword1" data-bv-require="true">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
+        <input type="submit" class="btn btn-default" value="Register" />
     </form>
     <script
     src="http://code.jquery.com/jquery-3.4.1.js"
@@ -41,7 +43,10 @@
     <script src="./validator.js"></script>
     <script type="text/javascript">
         $(function(){
-            console.log($("#my-form"))
+            // console.log($("#my-form"))
+            $("#my-form").bootstrapValidate({
+                raise: "keyup"
+            });
         })
     </script>
 </body>
